@@ -1,0 +1,44 @@
+DECLARATION
+============
+
+We are not responsible for any LOSS via using this software.
+
+WHAT'S IT
+==========
+
+A set of script with a GUI interface for you to trade any financial product in market, for now I only test on future index product.
+
+we follow kiss(Keep It Simple & Stupid) rule. 
+
+Keeping every function tiny, easy, and small not easy to break down the trading system, and easy to understand.
+
+Just for you to test or some other developer interested in this field.
+
+Online document https://autotrader.readthedocs.org/en/latest/
+
+Windows (32bit) installer http://dl.dropbox.com/u/14137697/autotrader/20130317/setup.exe
+
+HOW-TO
+==========
+
+In the near future we'll release the windows executable binary(.exe file) for download.
+
+main GUI frontend autotrader.exe
+
+DEVELOPER
+===========
+
+For developer you should have Python environment on version 2.7, most Linux distribution had installed, on Windows you can download it from http://www.python.org/, 
+take a look at requirements.txt. This project use wxFormBuilder v3.3.4-beta to build GUI layout ( http://wxformbuilder.org/ ), you can open wx.fbp under wxFormBuilder for reference.
+
+
+FIXME
+=======
+
+You are welcome to send any patches.
+
+License: MIT for individual, GPL for none individual.
+
+Author: TerryH, email: terryh.tp at gmail.com,
+
+Windows ICON from http://www.softicons.com/free-icons/toolbar-icons/fatcow-hosting-extra-icons-2-by-fatcow/
