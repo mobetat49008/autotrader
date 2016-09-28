@@ -49,8 +49,10 @@ __author__ = u'TerryH'
 
 app_realpath = os.path.realpath(sys.argv[0])
 app_dir = os.path.dirname(app_realpath)
+print app_dir
 
-market_ini = os.path.join(app_dir, 'config', 'market.ini')
+
+market_ini = os.path.join(app_dir, "config", "market.ini")
 commodity_ini = os.path.join(app_dir, 'config', 'commodity.ini')
 strategy_ini = os.path.join(app_dir, 'config', 'strategy.ini')
 data_dir = os.path.join(app_dir, 'data')
@@ -231,7 +233,11 @@ class Strategy(S, Mixin):
         return ''
 
     def onSubmit(self, event):
+	
         raw_dict = self.collect_data()
+		
+        if not os.path.exists(strategy_ini):
+		    open(commodity_ini,"a")
 
         if not self.validate(raw_dict):
             dlg = wx.MessageDialog(self,
@@ -473,7 +479,11 @@ class Commodity(C, Mixin):
         return True
 
     def onSubmit(self, event):
+	
         raw_dict = self.collect_data()
+		
+        if not os.path.exists(commodity_ini):
+		    open(commodity_ini,"a")
         if not self.validate(raw_dict):
             dlg = wx.MessageDialog(self,
                                    _("You must at least input Commodity Name, Commodity Code (alphanumeric), and Quote Folder for real time data processing, better at a ram disk folder."),
@@ -654,6 +664,10 @@ class Market(M, Mixin):
 
     def onSubmit(self, event):
         raw_dict = self.collect_data()
+	
+        if not os.path.exists(market_ini):
+			open(market_ini,"a")
+		
         if not self.validate(raw_dict):
             dlg = wx.MessageDialog(self,
                                    _("You must at least input Market Name, Market Code (alphanumeric), Session Clear Time and Session 1 Time"),
@@ -1110,6 +1124,8 @@ if __name__ == '__main__':
         multiprocessing.freeze_support()  # multiprcessing workaround
 
     app = wx.PySimpleApp(False)
+	
+
 
     #---------------------------------------------
     # locale
